@@ -1,1 +1,1 @@
-hello world
+Contents moved to the documentation repo, specifically [NEW_PROJECT_FROM_SCAFFOLD](https://github.com/jorge-cardenas-salas/job-search-prep/blob/main/general-concepts/NEW_PROJECT_FROM_SCAFFOLD.md)

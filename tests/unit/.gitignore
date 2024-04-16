@@ -1,0 +1,2 @@
+# sqlite test DB's are put here, so let's keep them out of git
+*.db
