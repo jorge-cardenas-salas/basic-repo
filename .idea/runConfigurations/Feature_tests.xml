@@ -11,7 +11,7 @@
     <option name="ADD_CONTENT_ROOTS" value="true" />
     <option name="ADD_SOURCE_ROOTS" value="true" />
     <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-    <WHAT_TO_RUN WHAT_TO_RUN="$PROJECT_DIR$/tests/feature/integrations.feature" />
+    <WHAT_TO_RUN WHAT_TO_RUN="$PROJECT_DIR$/tests/feature/test_api.feature" />
     <option name="ADDITIONAL_ARGS" value="" />
     <method v="2" />
   </configuration>

@@ -1,13 +1,12 @@
 from typing import List
 
 from fastapi import FastAPI, Depends
-from pydantic import BaseModel
 from sqlalchemy.orm import Session
 
 from common.database.daos.dao import Dao
 from common.database.database import get_session
-from common.database.row_models.row_models import PatientRow
 from common.models.patient import Patient
+from data_upload.uploader import Uploader
 
 app = FastAPI()
 
@@ -17,7 +16,7 @@ def is_alive() -> dict:
     return {"alive": True}
 
 
-@app.post("/create-models")
+@app.put("/create-models")
 def create_models(models: List[Patient], session: Session = Depends(get_session)) -> List[int]:
     try:
         rows = Dao.add_data(models=models, session=session)
@@ -25,3 +24,9 @@ def create_models(models: List[Patient], session: Session = Depends(get_session)
     except Exception as ex:
         print(f"Ooopsie!!: {str(ex)}")
         return [-1]
+
+
+@app.put("/upload-file")
+def upload_file(filename: str, session: Session = Depends(get_session)) -> List[int]:
+    uploader = Uploader(session=session)
+    return uploader.upload(filename)
