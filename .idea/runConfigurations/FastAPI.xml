@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="FastAPI" type="Python.FastAPI">
     <option name="additionalOptions" value="--host=0.0.0.0 --reload" />
-    <option name="file" value="C:\Users\Jorge\Projects\template\api\endpoints.py" />
+    <option name="file" value="C:\Users\Jorge\Projects\basic-repo\api\endpoints.py" />
     <module name="basic-repo" />
     <option name="ENV_FILES" value="" />
     <option name="INTERPRETER_OPTIONS" value="" />
