@@ -8,6 +8,7 @@ Class to upload files into the database
 from logging import Logger
 from typing import Optional, List
 
+from click.core import batch
 from pydantic import BaseModel  # , ValidationError
 from sqlalchemy.orm import Session, sessionmaker
 
@@ -62,7 +63,9 @@ class CsvParser:
             models: The models to be inserted
             i: The row number from the CSV (only for fail_mode == ROW)
         """
-        raise NotImplementedError()
+        parts = batch(models, batch_size=100)
+        for part in parts:
+            self.session.add_all(part)
 
     def parse_row(self, i: int, row: dict):
         """
