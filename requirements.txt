@@ -1,0 +1,16 @@
+fastapi
+sqlalchemy
+pydantic
+pydantic[email]
+pytest
+behave
+requests
+uvicorn
+mssql
+sqlserver
+pyodbc
+starlette.testclient
+httpx
+python-dotenv
+faker
+exrex

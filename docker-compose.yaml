@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  api:
+    env_file:
+      - .env
+    build: .
+    container_name: ${PROJECT_NAME}
+    expose:
+      - 8000
+    ports: # Port for my API
+      - "8000:8000"
+    restart: "always"
+    command: [ "uvicorn", "api.endpoints:app", "--host=0.0.0.0", "--reload" , "--reload-include='*.py'" ]
+    volumes:
+      - ./api/:/app/api
+      - ./common/:/app/common
+      - ./tests/:/app/tests
+      - ./data_upload/:/app/data_upload
+      - ./uploads/:/app/uploads
+      - ./resources/:/app/resources
+
